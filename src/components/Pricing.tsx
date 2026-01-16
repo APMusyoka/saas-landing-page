@@ -79,8 +79,8 @@ export default function Pricing() {
             <button
               onClick={() => setIsYearly(false)}
               className={`flex-1 py-2 px-2 sm:px-4 rounded-md text-sm font-medium transition-all ${!isYearly
-                  ? 'bg-white shadow-sm text-gray-900'
-                  : 'text-gray-500 hover:text-gray-900'
+                ? 'bg-white shadow-sm text-gray-900'
+                : 'text-gray-500 hover:text-gray-900'
                 }`}
             >
               Monthly
@@ -88,8 +88,8 @@ export default function Pricing() {
             <button
               onClick={() => setIsYearly(true)}
               className={`flex-1 py-2 px-2 sm:px-4 rounded-md text-sm font-medium transition-all flex flex-wrap items-center justify-center gap-x-2 ${isYearly
-                  ? 'bg-white shadow-sm text-gray-900'
-                  : 'text-gray-500 hover:text-gray-900'
+                ? 'bg-white shadow-sm text-gray-900'
+                : 'text-gray-500 hover:text-gray-900'
                 }`}
             >
               <span>Yearly</span>
@@ -99,7 +99,7 @@ export default function Pricing() {
         </motion.div>
 
         {/* Pricing cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
