@@ -99,7 +99,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden mx-1.5 my-2 p-4 bg-gray-50 rounded-lg shadow-sm"
+            className="lg:hidden mx-1.5 p-4 bg-gray-50 rounded-lg shadow-sm w-[300px]"
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
