@@ -30,7 +30,7 @@ export default function Footer() {
             <p className="text-gray-400 mb-6 max-w-xs">
               The all-in-one platform to build, launch, and scale your SaaS business faster than ever.
             </p>
-            
+
             {/* Social links */}
             <div className="flex gap-4">
               {socialLinks.map((social) => {
@@ -71,10 +71,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-gray-400 max-sm:text-center">
             © {currentYear} SaaS Platform. All rights reserved.
           </p>
-          
+
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">
               Privacy
