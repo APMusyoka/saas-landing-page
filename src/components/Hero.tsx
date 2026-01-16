@@ -11,9 +11,9 @@ export default function Hero() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     console.log('Email submitted:', email);
     alert('Thanks for joining our waitlist! 🎉');
     setEmail('');
@@ -42,7 +42,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 gradient-vibrant opacity-10"></div>
-      
+
       {/* Floating orbs for visual interest */}
       <motion.div
         className="absolute top-20 left-20 w-72 h-72 bg-primary-400 rounded-full blur-3xl opacity-20"
@@ -57,7 +57,7 @@ export default function Hero() {
           ease: "easeInOut"
         }}
       />
-      
+
       <motion.div
         className="absolute bottom-20 right-20 w-96 h-96 bg-accent-400 rounded-full blur-3xl opacity-20"
         animate={{
@@ -184,7 +184,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  className="card glass"
+                  className="card glass text-left"
                 >
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center mb-4">
                     <Icon className="w-6 h-6 text-white" />
