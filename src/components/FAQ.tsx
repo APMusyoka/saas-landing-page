@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     question: 'Can I change my plan later?',
-    answer: 'Absolutely! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any billing adjustments.'
+    answer: 'Absolutely! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we will prorate any billing adjustments.'
   },
   {
     question: 'What payment methods do you accept?',
@@ -18,15 +18,15 @@ const faqs = [
   },
   {
     question: 'Is my data secure?',
-    answer: 'Yes! We use bank-level 256-bit SSL encryption for all data transmission and storage. We\'re also SOC 2 Type II certified and GDPR compliant.'
+    answer: 'Yes! We use bank-level 256-bit SSL encryption for all data transmission and storage. We are also SOC 2 Type II certified and GDPR compliant.'
   },
   {
     question: 'Do you offer refunds?',
-    answer: 'We offer a 30-day money-back guarantee. If you\'re not satisfied with our service, contact us within 30 days for a full refund, no questions asked.'
+    answer: 'We offer a 30-day money-back guarantee. If you are not satisfied with our service, contact us within 30 days for a full refund, no questions asked.'
   },
   {
     question: 'Can I cancel my subscription anytime?',
-    answer: 'Yes, you can cancel your subscription at any time from your account settings. You\'ll continue to have access until the end of your billing period.'
+    answer: 'Yes, you can cancel your subscription at any time from your account settings. You will continue to have access until the end of your billing period.'
   }
 ];
 
