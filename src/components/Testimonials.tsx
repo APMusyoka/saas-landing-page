@@ -114,39 +114,44 @@ export default function Testimonials() {
           </p>
           
           {/* Infinite scroll container */}
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden py-4">
             {/* Gradient overlays */}
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
             <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
             
-            {/* Scrolling track */}
-            <div className="flex">
-              {/* Duplicate the companies array for seamless loop */}
-              {[...companies, ...companies].map((company, index) => {
-                const Icon = company.icon;
-                return (
-                  <motion.div
-                    key={`${company.name}-${index}`}
-                    animate={{
-                      x: [0, -1920]
-                    }}
-                    transition={{
-                      x: {
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear"
-                      }
-                    }}
-                    className="flex-shrink-0 flex items-center justify-center gap-3 px-8"
-                  >
-                    <Icon className="w-12 h-12 text-gray-400" />
-                    <span className="text-2xl font-bold text-gray-400 whitespace-nowrap">
-                      {company.name}
-                    </span>
-                  </motion.div>
-                );
-              })}
-            </div>
+            {/* Scrolling track - animate the entire container */}
+            <motion.div
+              className="flex gap-16"
+              animate={{
+                x: [0, -100 * companies.length]
+              }}
+              transition={{
+                x: {
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: "linear",
+                  repeatType: "loop"
+                }
+              }}
+            >
+              {/* Render companies 4 times for seamless loop */}
+              {[...Array(4)].map((_, setIndex) => (
+                companies.map((company) => {
+                  const Icon = company.icon;
+                  return (
+                    <div
+                      key={`${company.name}-${setIndex}`}
+                      className="flex-shrink-0 flex items-center justify-center gap-3 min-w-[200px]"
+                    >
+                      <Icon className="w-12 h-12 text-gray-400" />
+                      <span className="text-2xl font-bold text-gray-400 whitespace-nowrap">
+                        {company.name}
+                      </span>
+                    </div>
+                  );
+                })
+              ))}
+            </motion.div>
           </div>
         </motion.div>
       </div>
