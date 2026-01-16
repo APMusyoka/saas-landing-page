@@ -220,6 +220,7 @@ Full documentation available in the `docs/` folder:
 - `01-saas-landing-page.md` - Project overview
 - `02-key-features.md` - Feature breakdown
 - `03-design-system.md` - Design tokens & guidelines
+- `04-development-insights.md` - Development process & learnings
 
 ## 🤝 Contributing
 
