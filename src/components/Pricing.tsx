@@ -78,7 +78,7 @@ export default function Pricing() {
           <div className="flex items-center p-1 bg-gray-100 rounded-lg">
             <button
               onClick={() => setIsYearly(false)}
-              className={`flex-1 py-2 px-2 sm:px-4 rounded-md text-sm font-medium transition-all ${!isYearly
+              className={`flex-1 py-2 px-2 sm:px-4 rounded-md text-sm sm:text-base font-medium transition-all ${!isYearly
                 ? 'bg-white shadow-sm text-gray-900'
                 : 'text-gray-500 hover:text-gray-900'
                 }`}
@@ -87,13 +87,13 @@ export default function Pricing() {
             </button>
             <button
               onClick={() => setIsYearly(true)}
-              className={`flex-1 py-2 px-2 sm:px-4 rounded-md text-sm font-medium transition-all flex flex-wrap items-center justify-center gap-x-2 ${isYearly
+              className={`flex-1 py-2 px-2 sm:px-4 rounded-md text-sm sm:text-base font-medium transition-all flex flex-wrap items-center justify-center gap-x-2 ${isYearly
                 ? 'bg-white shadow-sm text-gray-900'
                 : 'text-gray-500 hover:text-gray-900'
                 }`}
             >
               <span>Yearly</span>
-              <span className="text-xs text-primary-600 font-bold whitespace-nowrap">Save 17%</span>
+              <span className="text-xs sm:text-sm text-primary-600 font-bold whitespace-nowrap">Save 17%</span>
             </button>
           </div>
         </motion.div>
