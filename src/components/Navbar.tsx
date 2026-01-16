@@ -102,19 +102,24 @@ export default function Navbar() {
             className="lg:hidden ml-auto mr-1 -mt-3 p-4 bg-gray-50 rounded-lg shadow-sm w-[300px]"
           >
             <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-gray-700 hover:text-primary-600 font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
+              {navLinks.map((link, index) => (
+                <div key={link.name} className="flex flex-col gap-4">
+                  <a
+                    href={link.href}
+                    className="text-gray-700 hover:text-primary-600 font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                  {/* Divider line (except for the last item) */}
+                  <div className="h-px bg-gray-200 w-[95%] mx-auto"></div>
+                </div>
               ))}
               <button className="text-gray-700 hover:text-primary-600 font-medium text-left">
                 Sign In
               </button>
+              {/* Divider for Sign In */}
+              {/* <div className="h-px bg-gray-200 w-[95%] mx-auto"></div> */}
               <button className="btn btn-primary">
                 Get Started
               </button>
