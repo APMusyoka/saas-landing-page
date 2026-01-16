@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { Zap, Shield, Rocket } from 'lucide-react';
 
 export default function Hero() {
   const [email, setEmail] = useState('');
@@ -11,7 +12,6 @@ export default function Hero() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     console.log('Email submitted:', email);
@@ -19,6 +19,24 @@ export default function Hero() {
     setEmail('');
     setIsSubmitting(false);
   };
+
+  const features = [
+    {
+      icon: Zap,
+      title: 'Lightning Fast',
+      description: 'Built for speed and performance'
+    },
+    {
+      icon: Shield,
+      title: 'Secure by Default',
+      description: 'Enterprise-grade security'
+    },
+    {
+      icon: Rocket,
+      title: 'Scale Effortlessly',
+      description: 'Grow without limits'
+    }
+  ];
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -158,35 +176,24 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16"
           >
-            {[
-              {
-                icon: '⚡',
-                title: 'Lightning Fast',
-                description: 'Built for speed and performance'
-              },
-              {
-                icon: '🔒',
-                title: 'Secure by Default',
-                description: 'Enterprise-grade security'
-              },
-              {
-                icon: '🚀',
-                title: 'Scale Effortlessly',
-                description: 'Grow without limits'
-              }
-            ].map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                className="card glass"
-              >
-                <div className="text-4xl mb-3">{feature.icon}</div>
-                <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                <p className="text-sm text-gray-600">{feature.description}</p>
-              </motion.div>
-            ))}
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                  className="card glass"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+                  <p className="text-sm text-gray-600">{feature.description}</p>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </div>
