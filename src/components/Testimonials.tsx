@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { SiStripe, SiShopify, SiNotion, SiFigma, SiVercel, SiLinear } from 'react-icons/si';
 
 const testimonials = [
   {
@@ -26,7 +27,14 @@ const testimonials = [
   }
 ];
 
-const companies = ['Stripe', 'Shopify', 'Notion', 'Figma', 'Vercel', 'Linear'];
+const companies = [
+  { name: 'Stripe', icon: SiStripe },
+  { name: 'Shopify', icon: SiShopify },
+  { name: 'Notion', icon: SiNotion },
+  { name: 'Figma', icon: SiFigma },
+  { name: 'Vercel', icon: SiVercel },
+  { name: 'Linear', icon: SiLinear }
+];
 
 export default function Testimonials() {
   return (
@@ -105,14 +113,21 @@ export default function Testimonials() {
             Trusted by teams at
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            {companies.map((company) => (
-              <div
-                key={company}
-                className="text-2xl font-bold text-gray-400 hover:text-gray-600 transition-colors"
-              >
-                {company}
-              </div>
-            ))}
+            {companies.map((company) => {
+              const Icon = company.icon;
+              return (
+                <div
+                  key={company.name}
+                  className="group flex items-center gap-2 transition-all hover:scale-110"
+                  title={company.name}
+                >
+                  <Icon className="w-8 h-8 text-gray-400 group-hover:text-gray-600 transition-colors" />
+                  <span className="text-xl font-bold text-gray-400 group-hover:text-gray-600 transition-colors">
+                    {company.name}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </motion.div>
       </div>
