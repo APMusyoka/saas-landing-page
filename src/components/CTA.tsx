@@ -78,7 +78,7 @@ export default function CTA() {
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-16 pt-16 border-t border-gray-300">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto mt-16 pt-16 border-t border-gray-300">
             {[
               { value: '10,000+', label: 'Active Users' },
               { value: '99.9%', label: 'Uptime SLA' },
