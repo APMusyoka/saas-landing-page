@@ -75,27 +75,25 @@ export default function Pricing() {
           </p>
 
           {/* Billing toggle */}
-          <div className="inline-flex items-center gap-4 p-1 bg-gray-100 rounded-lg">
+          <div className="flex items-center p-1 bg-gray-100 rounded-lg">
             <button
               onClick={() => setIsYearly(false)}
-              className={`px-6 py-2 rounded-md font-medium transition-all ${
-                !isYearly
-                  ? 'bg-white text-gray-900 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
+              className={`flex-1 py-2 px-2 sm:px-4 rounded-md text-sm font-medium transition-all ${!isYearly
+                  ? 'bg-white shadow-sm text-gray-900'
+                  : 'text-gray-500 hover:text-gray-900'
+                }`}
             >
               Monthly
             </button>
             <button
               onClick={() => setIsYearly(true)}
-              className={`px-6 py-2 rounded-md font-medium transition-all ${
-                isYearly
-                  ? 'bg-white text-gray-900 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
+              className={`flex-1 py-2 px-2 sm:px-4 rounded-md text-sm font-medium transition-all flex flex-wrap items-center justify-center gap-x-2 ${isYearly
+                  ? 'bg-white shadow-sm text-gray-900'
+                  : 'text-gray-500 hover:text-gray-900'
+                }`}
             >
-              Yearly
-              <span className="ml-2 text-xs text-primary-600 font-bold">Save 17%</span>
+              <span>Yearly</span>
+              <span className="text-xs text-primary-600 font-bold whitespace-nowrap">Save 17%</span>
             </button>
           </div>
         </motion.div>
@@ -109,11 +107,10 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative rounded-2xl p-8 ${
-                plan.highlighted
-                  ? 'bg-gradient-to-br from-primary-500 to-accent-500 text-white shadow-2xl scale-105'
-                  : 'bg-white border-2 border-gray-200'
-              }`}
+              className={`relative rounded-2xl p-8 ${plan.highlighted
+                ? 'bg-gradient-to-br from-primary-500 to-accent-500 text-white shadow-2xl scale-105'
+                : 'bg-white border-2 border-gray-200'
+                }`}
             >
               {plan.highlighted && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent-400 text-white text-sm font-bold rounded-full">
@@ -147,11 +144,10 @@ export default function Pricing() {
               </div>
 
               <button
-                className={`w-full py-3 rounded-lg font-semibold transition-all mb-6 ${
-                  plan.highlighted
-                    ? 'bg-white text-primary-600 hover:bg-gray-50'
-                    : 'bg-primary-500 text-white hover:bg-primary-600'
-                }`}
+                className={`w-full py-3 rounded-lg font-semibold transition-all mb-6 ${plan.highlighted
+                  ? 'bg-white text-primary-600 hover:bg-gray-50'
+                  : 'bg-primary-500 text-white hover:bg-primary-600'
+                  }`}
               >
                 Get Started
               </button>
