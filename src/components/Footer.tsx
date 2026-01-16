@@ -1,3 +1,5 @@
+import { FaTwitter, FaGithub, FaLinkedin, FaDiscord } from 'react-icons/fa';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -9,10 +11,10 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { name: 'Twitter', icon: '𝕏', href: '#' },
-    { name: 'GitHub', icon: 'G', href: '#' },
-    { name: 'LinkedIn', icon: 'in', href: '#' },
-    { name: 'Discord', icon: 'D', href: '#' }
+    { name: 'Twitter', icon: FaTwitter, href: '#' },
+    { name: 'GitHub', icon: FaGithub, href: '#' },
+    { name: 'LinkedIn', icon: FaLinkedin, href: '#' },
+    { name: 'Discord', icon: FaDiscord, href: '#' }
   ];
 
   return (
@@ -31,16 +33,19 @@ export default function Footer() {
             
             {/* Social links */}
             <div className="flex gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  className="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition-colors"
-                  aria-label={social.name}
-                >
-                  <span className="text-lg">{social.icon}</span>
-                </a>
-              ))}
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    className="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition-colors group"
+                    aria-label={social.name}
+                  >
+                    <Icon className="text-lg text-gray-400 group-hover:text-white transition-colors" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
