@@ -10,9 +10,9 @@ export default function CTA() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     console.log('Email submitted:', email);
     alert('🎉 Welcome to the waitlist! We\'ll be in touch soon.');
     setEmail('');
@@ -20,7 +20,7 @@ export default function CTA() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-primary-500 via-purple-600 to-accent-500 relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-primary-100 via-purple-50 to-accent-100 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-grid-white/10"></div>
       <motion.div
@@ -35,7 +35,7 @@ export default function CTA() {
           ease: "easeInOut"
         }}
       />
-      
+
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -44,10 +44,10 @@ export default function CTA() {
           transition={{ duration: 0.5 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Ready to get started?
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-700 mb-10 max-w-2xl mx-auto">
             Join thousands of users who are already building amazing products with our platform.
           </p>
 
@@ -67,18 +67,18 @@ export default function CTA() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-8 py-4 bg-white text-primary-600 font-bold rounded-lg text-lg hover:bg-gray-50 transition-all disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+              className="px-8 py-4 btn btn-primary font-bold rounded-lg text-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
             >
               {isSubmitting ? 'Joining...' : 'Join Waitlist'}
             </button>
           </form>
 
-          <p className="text-white/80 text-sm">
+          <p className="text-gray-600 text-sm">
             No credit card required • 14-day free trial • Cancel anytime
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-16 pt-16 border-t border-white/20">
+          <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-16 pt-16 border-t border-gray-300">
             {[
               { value: '10,000+', label: 'Active Users' },
               { value: '99.9%', label: 'Uptime SLA' },
@@ -91,10 +91,10 @@ export default function CTA() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
                   {stat.value}
                 </div>
-                <div className="text-white/80">
+                <div className="text-gray-700">
                   {stat.label}
                 </div>
               </motion.div>
