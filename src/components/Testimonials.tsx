@@ -59,7 +59,7 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Testimonials grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
@@ -101,7 +101,7 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Companies */}
+        {/* Companies Carousel */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -112,22 +112,41 @@ export default function Testimonials() {
           <p className="text-sm text-gray-500 mb-8 uppercase tracking-wide font-semibold">
             Trusted by teams at
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            {companies.map((company) => {
-              const Icon = company.icon;
-              return (
-                <div
-                  key={company.name}
-                  className="group flex items-center gap-2 transition-all hover:scale-110"
-                  title={company.name}
-                >
-                  <Icon className="w-8 h-8 text-gray-400 group-hover:text-gray-600 transition-colors" />
-                  <span className="text-xl font-bold text-gray-400 group-hover:text-gray-600 transition-colors">
-                    {company.name}
-                  </span>
-                </div>
-              );
-            })}
+          
+          {/* Infinite scroll container */}
+          <div className="relative overflow-hidden">
+            {/* Gradient overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+            
+            {/* Scrolling track */}
+            <div className="flex">
+              {/* Duplicate the companies array for seamless loop */}
+              {[...companies, ...companies].map((company, index) => {
+                const Icon = company.icon;
+                return (
+                  <motion.div
+                    key={`${company.name}-${index}`}
+                    animate={{
+                      x: [0, -1920]
+                    }}
+                    transition={{
+                      x: {
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear"
+                      }
+                    }}
+                    className="flex-shrink-0 flex items-center justify-center gap-3 px-8"
+                  >
+                    <Icon className="w-12 h-12 text-gray-400" />
+                    <span className="text-2xl font-bold text-gray-400 whitespace-nowrap">
+                      {company.name}
+                    </span>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </motion.div>
       </div>
